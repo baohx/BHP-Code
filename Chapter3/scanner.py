@@ -6,12 +6,24 @@ import threading
 from netaddr import IPNetwork,IPAddress
 from ctypes import *
 
+def hexdump(src, length=16):
+    result = []
+    digits = 4 if isinstance(src, unicode) else 2
+
+    for i in xrange(0, len(src), length):
+       s = src[i:i+length]
+       hexa = b' '.join(["%0*X" % (digits, ord(x))  for x in s])
+       text = b''.join([x if 0x20 <= ord(x) < 0x7F else b'.'  for x in s])
+       result.append( b"%04X   %-*s   %s" % (i, length*(digits + 1), hexa, text) )
+
+    print b'\n'.join(result)
+
 # host to listen on
-host   = "192.168.113.134"
+host   = "192.168.1.9"
 
 # subnet to target
-#subnet = "192.168.113.0/24"
-subnet = "10.116.32.0/24"
+subnet = "192.168.1.0/24"
+
 # magic we'll check ICMP responses for
 magic_message = "PYTHONRULES!"
 
@@ -108,25 +120,28 @@ try:
     while True:
         
         # read in a single packet
-        #raw_buffer = sniffer.recvfrom(65565)[0]
         raw_buffer = sniffer.recvfrom(65535)[0]
         
         # create an IP header from the first 20 bytes of the buffer
         ip_header = IP(raw_buffer[0:20])
-
-        print "Protocol: %s %s -> %s" % (ip_header.protocol, ip_header.src_address, ip_header.dst_address)
+        print "ip_header=>"
+        hexdump(raw_buffer[0:20]) 
+        print "1 |> Protocol: %s %s -> %s" % (ip_header.protocol, ip_header.src_address, ip_header.dst_address)
     
         # if it's ICMP we want it
         if ip_header.protocol == "ICMP":
             
             # calculate where our ICMP packet starts
             offset = ip_header.ihl * 4
+            print "2 |> offset=>",offset," ICMP size=>",sizeof(ICMP)
+            hexdump(raw_buffer[offset:offset+sizeof(ICMP)])
             buf = raw_buffer[offset:offset + sizeof(ICMP)]
-            
+            print "2'|> After ICMP=>"
+            hexdump(raw_buffer[offset + sizeof(ICMP) + 20:])
             # create our ICMP structure
             icmp_header = ICMP(buf)
             
-            print "ICMP -> Type: %d Code: %d" % (icmp_header.type, icmp_header.code)
+            print "3 |> ICMP -> Type: %d Code: %d" % (icmp_header.type, icmp_header.code)
 
             # now check for the TYPE 3 and CODE 3 which indicates
             # a host is up but no port available to talk to           
@@ -137,6 +152,8 @@ try:
                 if IPAddress(ip_header.src_address) in IPNetwork(subnet):
                     
                     # test for our magic message
+                    print '4 |> raw_buffer=>'
+                    hexdump(raw_buffer)
                     if raw_buffer[len(raw_buffer)-len(magic_message):] == magic_message:
                         print "Host Up: %s" % ip_header.src_address
 # handle CTRL-C
