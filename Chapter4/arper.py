@@ -3,9 +3,9 @@ import os
 import sys
 import threading
 
-interface    = "en1"
-target_ip    = "172.16.1.71"
-gateway_ip   = "172.16.1.254"
+interface    = "eth0"
+target_ip    = "192.168.113.128"
+gateway_ip   = "192.168.113.1"
 packet_count = 1000
 poisoning    = True
     
