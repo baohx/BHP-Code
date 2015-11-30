@@ -1,0 +1,483 @@
+HTTP/1.1 200 OK
+Date: Fri, 27 Nov 2015 05:53:40 GMT
+Server: WebSphere Application Server/6.1
+Content-Type: text/html; charset=UTF-8
+Content-Language: en-US
+Content-Length: 13313
+Set-Cookie: JSESSIONID=0000YTNd3esu4k1sgXEfRB0TAfl:-1; Path=/
+
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<meta HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+		<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+		<meta HTTP-EQUIV="Expires" CONTENT="0"> 
+		<title>产品登录界面</title>
+		<style>
+			html{
+				overflow: hidden; overflow-y: auto;
+				font-size:12px;
+			}
+			html,body{
+				height:100%;
+			}
+			body{
+				margin:0px;
+				padding:0px;
+			}
+						
+			#topbg{
+				width:100%;
+				height:56px;
+				line-height:56px;
+				background-image:url('logo/images/top_bg.jpg');
+				background-repeat:no-repeat;
+				background-color:#C8D9EB;
+				border-bottom:1px solid #bdc8d8;
+			}
+			
+			#toplang{
+				padding-right:22px;
+			}
+			
+			#icondiv{
+				position:relative;
+				height:450px;
+				width:305px;
+				left:0px;
+				background-image:url('logo/images/icon_bg.gif');
+			}
+			
+			#icondiv #nc_img{
+				margin-top:20px;
+				margin-left:86px;
+				height:109px;
+				width:110px;
+				cursor:pointer;
+				background-image:url('logo/images/ufida_nc.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/ufida_nc.png, sizingmethod=scale);
+			}
+			
+			#icondiv #nc_img_disable{
+				margin-top:20px;
+				margin-left:86px;
+				height:109px;
+				width:110px;
+				background-image:url('logo/images/ufida_nc_disable.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/ufida_nc_disable.png, sizingmethod=scale);
+			}
+			
+			#icondiv #iufo_img{
+				margin-top:15px;
+				margin-left:132px;
+				height:90px;
+				width:89px;
+				cursor:pointer;
+				background-image:url('logo/images/ufida_iufo.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/ufida_iufo.png, sizingmethod=scale);
+			}
+			
+			#icondiv #iufo_img_disable{
+				margin-top:15px;
+				margin-left:132px;
+				height:90px;
+				width:89px;
+				background-image:url('logo/images/ufida_iufo_disable.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/ufida_iufo_disable.png, sizingmethod=scale);
+			}
+			
+			#icondiv #ebs_img{
+				margin-top:15px;
+				margin-left:94px;
+				height:87px;
+				width:86px;
+				cursor:pointer;
+				background-image:url('logo/images/ufida_ebs.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/ufida_ebs.png, sizingmethod=scale);
+			}
+			
+			#icondiv #ebs_img_disable{
+				margin-top:15px;
+				margin-left:94px;
+				height:87px;
+				width:86px;
+				background-image:url('logo/images/ufida_ebs_disable.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/ufida_ebs_disable.png, sizingmethod=scale);
+			}
+			
+			#icondiv #selfhelp_img{
+				margin-top:20px;
+				margin-left:130px;
+				height:90px;
+				width:89px;
+				cursor:pointer;
+				background-image:url('logo/images/ufida_ehr.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/ufida_ehr.png, sizingmethod=scale);
+			}
+			
+			#icondiv #selfhelp_img_disable{
+				margin-top:20px;
+				margin-left:130px;
+				height:90px;
+				width:89px;
+				background-image:url('logo/images/ufida_ehr_disable.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/ufida_ehr_disable.png, sizingmethod=scale);
+			}
+			
+			#contentdiv{
+				position:absolute;
+				top:50px;
+				left:225px;
+				height:450px;
+				overflow:hidden;
+				z-index:10;
+			}
+			
+			#contentdiv #nc_text{
+				width:90%;
+				margin-top:45px;
+				height:109px;
+			}
+			
+			#contentdiv #iufo_text{
+				width:90%;
+				margin-top:20px;
+				padding-left:20px;
+				height:90px;
+			}
+			
+			#contentdiv #e-procurement_text{
+				width:90%;
+				margin-top:20px;
+				padding-left:0px;
+				height:80px;
+			}
+			
+			#contentdiv #selfhelp_text{
+				width:90%;
+				margin-top:30px;
+				padding-left:20px;
+				height:80px;
+			}
+			
+			.bottomdiv{
+				background-color:#f9fbfd;
+				padding-right:30px;
+				padding-top:14px;
+				text-align:right;
+				color:#839cbd;
+				height:100%;
+			}
+		  	
+		  	#centertr{
+		  		background-image:url('logo/images/v_bg.gif');
+		  		background-repeat:repeat-x;
+		  		background-color:#F5F9FD;
+		  	}
+		  	
+		  	.boldfont{
+		  		font-weight:bold;
+		  		height:20px;
+		  	}
+
+			#zizhu_img{
+				float:left;
+				height:20px;
+				width:113px;
+				cursor:pointer;
+				background-image:url('logo/images/zizhu_english.png');
+				background-repeat:no repeat;
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/zizhu_english.png, sizingmethod=scale);
+			}
+			
+			#zizhu_img_disable{
+				float:left;
+				height:20px;
+				width:113px;
+				background-repeat:no repeat;
+				background-image:url('logo/images/zizhu_english_disable.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/zizhu_english_disable.png, sizingmethod=scale);
+			}
+			#jcfx_img{
+				float:left;
+				height:20px;
+				width:200px;
+				cursor:pointer;
+				background-image:url('logo/images/jcfx_english.png');
+				background-repeat:no-repeat;
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/jcfx_english.png, sizingmethod=crop);
+			}
+			
+			#jcfx_img_disable{
+				float:left;
+				height:20px;
+				width:200px;
+				background-repeat:no-repeat;
+				background-image:url('logo/images/jcfx_english_disable.png');
+				_background:none;
+				_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=logo/images/jcfx_english_disable.png, sizingmethod=crop);
+			}
+
+		</style>
+		<!--[if IE 9]>
+			<style>
+				#centertr{
+					height:expression(document.documentElement.clientHeight - 153);
+		  		}
+			</style>
+		<![endif]-->
+
+		<!--[if IE 7]>
+			<style>
+				#centertr{
+					height:expression(document.documentElement.clientHeight - 152);
+				}
+			</style>
+		<![endif]-->
+		
+		
+		<!--[if IE 6]>
+			<script>
+				window.IS_IE6 = true;
+			</script>
+			<style>
+				#centertr{
+					height:expression(document.documentElement.clientHeight - 150);
+				}
+			</style>
+		<![endif]-->
+		<script>
+			function outImage(code){
+				var id = null;
+				var img = null;
+				if(code == 'nc'){
+					id = "nc_img";
+					img = "ufida_nc.png";
+				}
+				else if(code == 'iufo'){
+					id = "iufo_img";
+					img = "ufida_iufo.png";
+				}
+				else if(code == 'ebs'){
+					id = "ebs_img";
+					img = "ufida_ebs.png";
+				}
+				else if(code == 'hr'){
+					id = "selfhelp_img";
+					img = "ufida_ehr.png";
+				}
+				else if(code == 'zizhu'){
+					id = "zizhu_img";
+					img = "zizhu_english.png";
+				}
+				else if(code == 'jcfx'){
+					id = "jcfx_img";
+					img = "jcfx_english.png";
+				}
+				img = "logo/images/" + img;
+				var div = document.getElementById(id);
+				if(window.IS_IE6){
+					div.style.background = "none";
+					div.style["filter"] = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + img + ", sizingmethod=crop)";
+				}
+				else
+					div.style.backgroundImage = "url('" + img + "')";
+			}
+			
+			function overImage(code) {
+				var id = null;
+				var img = null;
+				if(code == 'nc'){
+					id = "nc_img";
+					img = "ufida_nc_over.png";
+				}
+				else if(code == 'iufo'){
+					id = "iufo_img";
+					img = "ufida_iufo_over.png";
+				}
+				else if(code == 'ebs'){
+					id = "ebs_img";
+					img = "ufida_ebs_over.png";
+				}
+				else if(code == 'hr'){
+					id = "selfhelp_img";
+					img = "ufida_ehr_over.png";
+				}
+				
+				else if(code == 'zizhu'){
+					id = "zizhu_img";
+					img = "zizhu_english_over.png";
+				}
+				else if(code == 'jcfx'){
+					id = "jcfx_img";
+					img = "jcfx_english_over.png";
+				}
+
+				img = "logo/images/" + img;
+				var div = document.getElementById(id);
+				if(window.IS_IE6){
+					div.style.background = "none";
+					div.style["filter"] = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + img + ", sizingmethod=crop)";
+				}
+				else
+					div.style.backgroundImage = "url('" + img + "')";
+			}
+		</script>
+	</head>
+	<body>
+		<table id="mainTable" style="width:100%;height:100%;" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td style="height:56px;">
+					<div id="topbg">
+						<div style="float:left;height:56px">
+							<img width="227px" height="56px" src="logo/images/logo.png"/>
+						</div>
+					</div>
+				</td>
+			</tr>
+			
+			
+	
+			<tr id="centertr">
+				<td valign="top">
+					<div id="icondiv">
+						
+							
+								<a href="index.jsp">
+									<div id="nc_img" onmouseover="overImage('nc');" onmouseout="outImage('nc')">
+									</div>
+								</a>
+							
+							
+						
+						
+							
+								<a href="index.jsp">
+									<div id="selfhelp_img" onmouseover="overImage('hr');" onmouseout="outImage('hr')">
+									</div>
+								</a>
+							
+							
+						
+						
+							
+								<a href="/service/~iufo/nc.ui.iufo.login.Index">
+									<div id="iufo_img" onmouseover="overImage('iufo');" onmouseout="outImage('iufo')">
+									</div>
+								</a>
+							
+							
+						
+						
+							
+							
+								<div id="ebs_img_disable">
+								</div>
+							
+						
+						
+					</div>
+					<div id="contentdiv">
+						<div id="nc_text">
+							<div class="boldfont">Your First Choice For Chinese High-end Enterprises Management Software</div>
+							As a high-end management software, UFIDA NC provides full solutions for financial accounting, management accounting, fund management, asset management, budget management, HR, supply chain, distribution, multi-factory manufacture, analysis and decision-making, and consolidated report. It focuses on business collaboration and centralized management. A unified IT platform based on UAP platform is constructed for satisfying the management demands of any organization in any region at any level in any field.
+						</div>
+						<div id="selfhelp_text">
+							<div class="boldfont">Self-service</div>
+							With the self-service system, both managers and employees can have access to enterprise management. It forms an HR management mode which brings the whole group involved into management. It establishes a platform of HR management and communication.
+							<div>
+								<div style="float:left;width:60px"></div>
+								
+									
+										<a href="/hrss/index.html">
+											<div id="zizhu_img" onmouseover="overImage('zizhu');" onmouseout="outImage('zizhu')">
+											</div>
+										</a>
+									
+									
+								
+								<div style="float:left;width:20px"></div>
+								
+									
+										<a href="/hrdac/">
+											<div id="jcfx_img" onmouseover="overImage('jcfx');" onmouseout="outImage('jcfx')">
+											</div>
+										</a>
+									
+									
+								
+							</div>
+						</div>
+						<div id="iufo_text">
+							<div class="boldfont">Group Consolidated Report</div>
+							UFIDA NC–Group Consolidated Report provides group users with comprehensive report solutions and facilitates the centralized report management. It supports output of various business reports, preparation of consolidated reports and segment reports, and the management of report permission and process. 
+						</div>
+						<div id="e-procurement_text">
+							<div class="boldfont">E-Procurement</div>
+							UFIDA NC - e-Procurement provides an open and comprehensive Internet platform for online procurement, bridging the business cooperation between enterprises and suppliers. The low-costing e-Procurement creates a win-win situation between enterprises and suppliers by enhancing effectiveness as well as openness of e-Commerce. 
+						</div>
+						
+					</div>
+					
+					<div id="extdiv" style="clear:both;padding-left:30px;font-weight:bold;padding-top:20px;">
+						
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="height:40px">
+					<div class="bottomdiv">
+						<div style="width:100%;height:20px">
+							<img src="logo/images/login_logo_bottom.png" width="140px" height="16px"/>
+						</div>
+						<div style="width:100%;">
+							&copy;Copyright 1997-2015 UFIDA Software CO.LTD all rights reserved
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		<!--[if IE 6]>
+			<script>
+				function alphaImages(){
+					var images = document.images;
+					for(var i = 0; i < images.length; i ++)
+					{
+						var pngImg = images[i];
+						var iw = pngImg.width;
+						var ih = pngImg.height;
+						pngImg.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + pngImg.src + ", sizingmethod=scale);" 
+						pngImg.src = "logo/images/transparent.gif";
+						pngImg.width = iw;
+						pngImg.height = ih;
+					}
+				}
+				alphaImages();
+				
+			</script>
+		<![endif] -->
+	</body>
+</html>

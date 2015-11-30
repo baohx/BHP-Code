@@ -1,0 +1,224 @@
+HTTP/1.1 200 OK
+Date: Fri, 27 Nov 2015 05:54:05 GMT
+Server: Resin/2.1.14
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 7779
+Set-Cookie: JSESSIONID=aZhKD06U8ld-; path=/
+
+<html>
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>浦银金融租赁业务管理系统</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #1D3647;
+}
+-->
+</style>
+<script>
+function ckEmpty(frm){
+	if(IsEmptyValue(frm.USERCODE.value)){
+		frm.USERCODE.select();
+		frm.USERCODE.focus();
+		alert('请输入用户代码');
+		return false;
+	}else if(IsEmptyValue(frm.USERPWD.value)){
+		frm.USERPWD.select();
+		frm.USERPWD.focus();
+		alert('请输入密码');
+		return false;
+	}else{
+		return true;
+		//myform.submit();
+	}
+}
+
+
+function getResult(frm){
+	var USERCODE=frm.USERCODE.value;
+	if(USERCODE==""){
+		alert("请选输入账号,再点击获取验证码.");
+		return;
+	}
+	var strmsg=xmlDevokeTans("TRANSCODE=info_pubclasscon&usercode="+USERCODE,"namestr");
+	if(strmsg!=""){
+		alert(strmsg);
+	}else{
+		alert("验证码获取成功,请查收.");
+		var effective=0;
+		if(frm.effective.value!='')
+			effective=frm.effective.value;
+		settime(effective,'phyzm','手机验证码');
+	}
+}		
+function getResultE(frm){
+	var USERCODE=frm.USERCODE.value;
+	if(USERCODE==""){
+		alert("请选输入账号,再点击获取验证码.");
+		return;
+	}
+	var strmsg=xmlDevokeTans("TRANSCODE=info_getEmailidfycode&usercode="+USERCODE,"namestr");
+	if(strmsg!=""){
+		alert(strmsg);
+	}else{
+		alert("验证码获取成功,请查收.");
+		var effective=0;
+		if(frm.effective.value!='')
+			effective=frm.effective.value;
+		settime(effective,'elyzm','电邮验证码');
+	}
+}		
+function settime(times,str,str1){
+	var secs = times; //倒计时的秒数 
+	for(var i=secs;i>=0;i--)  
+	{ 
+		window.setTimeout("doUpdate(" + i + ",'"+str+"','"+str1+"')", (secs-i) * 1000); 
+	} 
+}
+function doUpdate(num,str,str1){  
+	if(num!="0"){
+		document.getElementById(str).value =  num + "秒"; 
+		document.getElementById(str).disabled=true;
+	}else{
+		document.getElementById(str).value =  str1; 
+		document.getElementById(str).disabled=false;
+	}
+}	
+</script>
+<link href="/swotech/lease/inte/login_img/login.css" rel="stylesheet" type="text/css">
+<SCRIPT src="/njs/public.js"></SCRIPT>
+
+<body  class="login_body" onLoad="javascript: document.forms[0].USERCODE.value=GetCookie('USERCODE');" >
+<table width="100%" height="166" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="42" valign="top"><table width="100%" height="42" border="0" cellpadding="0" cellspacing="0" class="login_top_bg">
+      <tr>
+        <td width="1%" height="21">&nbsp;</td>
+        <td height="42">&nbsp;</td>
+        <td width="17%">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="100%" height="532" border="0" cellpadding="0" cellspacing="0" class="login_bg">
+      <tr>
+        <td width="49%" align="right"><table width="91%" height="532" border="0" cellpadding="0" cellspacing="0" class="login_bg2">
+            <tr>
+              <td height="138" valign="top"><table width="89%" height="291" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="209">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right" valign="top"><img src="/swotech/lease/inte/login_img/logo.png" width="279" height="68"></td>
+                  <td width="" height="80">&nbsp;</td>
+                </tr>
+                </table></td>
+            </tr>
+            
+        </table></td>
+        <td width="1%" >&nbsp;</td>
+        <td width="50%" valign="bottom"><table width="100%" height="59" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="4%">&nbsp;</td>
+              <td width="96%" height="38"><span class="login_txt_bt">用户登陆信息</span></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td height="21"><table cellSpacing="0" cellPadding="0" width="100%" border="0" id="table211" height="328">
+                  <tr>
+                    <td height="164" colspan="2" align="middle">
+                    <form name="myform" action="/servlet/mainGateServlet" method="post" onsubmit="return ckEmpty(this);">
+                        <table cellSpacing="0" cellPadding="0" width="100%" border="0" height="117" id="table212">
+                          <tr>
+                            <td width="13%" height="40" class="top_hui_text"><span class="login_txt"> 账 号：&nbsp;&nbsp; </span></td>
+                            <td height="40" colspan="2" class="top_hui_text"><label>
+	       <input name="USERCODE" type="text" class="input" value="" />
+	       <input type="hidden"  name="TRANSCODE"  value="SYS_OperLogin">
+	        <input type="hidden"  name="userstat"  value="1">
+	         <input type="hidden"  name="systemname"  value="inteIndexJsp">
+	       </label></td>
+                          </tr>
+                          <tr>
+                            <td width="13%" height="42" class="top_hui_text"><span class="login_txt"> 密 码： &nbsp;&nbsp; </span></td>
+                            <td height="42" colspan="2" class="top_hui_text"><label>
+	       <input name="USERPWD" type="password" class="input" value=""  maxlength="18"/>
+	       </label>
+	
+                              <img src="/swotech/lease/inte/login_img/luck.gif" width="19" height="18"> </td>
+                          </tr>
+                          <tr>
+                            <td height="35" >&nbsp;</td>
+                            <td width="20%" height="35" >
+							<!--<input name="button" type="button" class="btn1" value="登录" onClick="return ckEmpty(this.form)" style="cursor:hand"/>-->
+							<input name="btn" type="submit" class="btn1" value="登录"  style="cursor:hand"/>
+							</td>
+                            <td width="67%" class="top_hui_text">
+                            <input type="reset" name=""  value="重置" class="btn1"  style="cursor:hand"></td>
+                          </tr>
+                        </table>
+                        <br>
+                    </form>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="433" height="164" align="right" valign="bottom"><img src="/swotech/lease/inte/login_img/login-wel.gif" width="242" height="138"></td>
+                    <td width="57" align="right" valign="bottom">&nbsp;</td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table>
+          </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="20"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="login-buttom-bg">
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>
+<script language="javascript">
+  //fkey();
+	function SetCookie(name, value) 
+{
+    var expString = "; expires=" + never.toGMTString();
+    document.cookie = name + "=" + escape(value) + expString;
+}
+
+// returns value of cookie or null if cookie does not exist
+function GetCookie(name) 
+{
+    var result = null;
+    var myCookie = " " + document.cookie + ";";
+    var searchName = " " + name + "=";
+    var startOfCookie = myCookie.indexOf(searchName);
+    var endOfCookie;
+    if (startOfCookie != -1) 
+    {
+        startOfCookie += searchName.length; // skip past name of cookie
+        endOfCookie = myCookie.indexOf(";", startOfCookie);
+        result = unescape(myCookie.substring(startOfCookie, endOfCookie));
+    }
+    if(IsEmptyValue(result))
+    	return "";
+    return result;
+}
+function svusername()
+{
+    SetCookie('USERCODE',document.forms[0].USERCODE.value);
+}
+
+
+</script>
