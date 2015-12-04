@@ -1,0 +1,27 @@
+总用量 96
+drwxr-xr-x  23 root root  4096 Aug 11 06:02 ./
+drwxr-xr-x  23 root root  4096 Aug 11 06:02 ../
+-rw-r--r--   1 root root     0 Aug  9 11:04 0
+drwxrwxr-x   2 root root  4096 Aug 11 14:59 bin/
+drwxr-xr-x   3 root root  4096 Aug 11 06:16 boot/
+drwxr-xr-x  18 root root  5500 Dec  1 13:59 dev/
+drwxr-xr-x 181 root root 12288 Dec  1 14:02 etc/
+drwxr-xr-x   2 root root  4096 Jul 23 15:00 home/
+lrwxrwxrwx   1 root root    34 Aug 11 05:58 initrd.img -> /boot/initrd.img-4.0.0-kali1-amd64
+drwxr-xr-x  20 root root  4096 Aug 11 05:58 lib/
+drwxr-xr-x   2 root root  4096 Aug 11 05:58 lib64/
+drwxr-xr-x   2 root root  4096 Aug  9 11:08 live-build/
+drwx------   2 root root 16384 Aug 11 05:57 lost+found/
+drwxr-xr-x   3 root root  4096 Aug  9 10:18 media/
+drwxr-xr-x   2 root root  4096 Jul 23 15:00 mnt/
+drwxr-xr-x   4 root root  4096 Aug 11 06:28 opt/
+dr-xr-xr-x 172 root root     0 Dec  1 13:35 proc/
+drwxr-xr-x  23 root root  4096 Dec  1 14:14 root/
+drwxr-xr-x  26 root root   840 Dec  1 13:40 run/
+drwxr-xr-x   2 root root  4096 Aug 11 06:29 sbin/
+drwxr-xr-x   3 root root  4096 Aug 11 05:58 srv/
+dr-xr-xr-x  13 root root     0 Dec  1 14:26 sys/
+drwxrwxrwt  13 root root  4096 Dec  1 14:25 tmp/
+drwxr-xr-x  14 root root  4096 Aug 11 06:02 usr/
+drwxr-xr-x  13 root root  4096 Aug 11 06:02 var/
+lrwxrwxrwx   1 root root    30 Aug 11 06:02 vmlinuz -> boot/vmlinuz-4.0.0-kali1-amd64
